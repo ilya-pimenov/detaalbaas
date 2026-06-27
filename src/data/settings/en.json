@@ -1,7 +1,15 @@
 {
-  "lang": "en",
-  "siteTitle": "De TaalBaas",
-  "siteDescription": "Tailor-made Dutch language training in Amsterdam and the surrounding area for companies, institutions and individuals.",
+  "contact": {
+    "addressLine1": "Tweede Jan van der Heijdenstraat 44-3L",
+    "addressLine2": "1074 XV Amsterdam",
+    "intro": "Would you like to request a quote with no further obligations? Simply get in touch with us.",
+    "ctaEmail": "Send an email",
+    "ctaCall": "Call now",
+    "phone": "(+31) 6 16 459 022",
+    "title": "Rates / requesting a quote",
+    "phoneHref": "+31616459022",
+    "email": "bleekertim@gmail.com"
+  },
   "nav": {
     "reviews": "Reviews",
     "courses": "Courses",
@@ -10,54 +18,67 @@
     "contact": "Contact"
   },
   "languageSwitchLabel": "NL",
+  "lang": "en",
+  "sections": {
+    "coursesTitle": "Courses",
+    "wordSubtitle": "Word of the week",
+    "galleryTitle": "Impressions",
+    "wordTitle": "Did you know …",
+    "coursesSubtitle": "Open enrolment for group classes. Prefer a tailor-made or in-company course? Feel free to request a quote.",
+    "reviewsSubtitle": "A selection of reviews from former students.",
+    "practiceSubtitle": "Students speaking, lesson situations and a day out with the group through the city.",
+    "practiceTitle": "In practice",
+    "reviewsTitle": "What students say"
+  },
+  "siteTitle": "De TaalBaas",
+  "siteDescription": "Tailor-made Dutch language training in Amsterdam and the surrounding area for companies, institutions and individuals.",
   "hero": {
+    "body": "Our courses are tailored to you, your wishes and goals, and can be offered at all levels, from complete beginner to advanced.",
     "badge": "Dutch language training in Amsterdam",
-    "titleLead": "De",
+    "ctaSecondary": "Request a quote",
     "titleBoss": "TaalBaas",
     "intro": "provides a wide range of Dutch training courses in Amsterdam and the surrounding area.",
-    "body": "Our courses are tailored to you, your wishes and goals, and can be offered at all levels, from complete beginner to advanced.",
+    "imageAlt": "Tim teaching an interactive Dutch lesson to a group of students",
     "ctaPrimary": "View courses",
-    "ctaSecondary": "Request a quote",
-    "image": "/media/photos/classroom-bright.jpg",
-    "imageAlt": "Tim teaching an interactive Dutch lesson to a group of students"
+    "titleLead": "De",
+    "image": "/media/photos/classroom-bright.jpg"
+  },
+  "footer": {
+    "tagline": "Tailor-made Dutch language training in Amsterdam and the surrounding area.",
+    "rights": "All rights reserved."
   },
   "qualities": {
     "title": "How De TaalBaas works",
     "subtitle": "Every course is different, but the approach is always:",
     "items": [
-      { "label": "Interactive", "description": "You are constantly speaking yourself, never passively listening." },
-      { "label": "Communicative", "description": "The focus is on real conversations you can use straight away outside class." },
-      { "label": "Task-oriented", "description": "You practise with concrete tasks from your work and daily life." },
-      { "label": "Practical", "description": "Dutch you can apply immediately — no dry theory for theory's sake." },
-      { "label": "Structured", "description": "A clear build-up from beginner to advanced, step by step." },
-      { "label": "Purposeful", "description": "We work together towards your specific goal or exam." },
-      { "label": "Dynamic", "description": "Varied formats keep every lesson fresh and engaging." }
+      {
+        "label": "Interactive",
+        "description": "You are constantly speaking yourself, never passively listening."
+      },
+      {
+        "label": "Communicative",
+        "description": "The focus is on real conversations you can use straight away outside class."
+      },
+      {
+        "label": "Task-oriented",
+        "description": "You practise with concrete tasks from your work and daily life."
+      },
+      {
+        "label": "Practical",
+        "description": "Dutch you can apply immediately — no dry theory for theory's sake."
+      },
+      {
+        "label": "Structured",
+        "description": "A clear build-up from beginner to advanced, step by step."
+      },
+      {
+        "label": "Purposeful",
+        "description": "We work together towards your specific goal or exam."
+      },
+      {
+        "label": "Dynamic",
+        "description": "Varied formats keep every lesson fresh and engaging."
+      }
     ]
-  },
-  "sections": {
-    "coursesTitle": "Courses",
-    "coursesSubtitle": "Open enrolment for group classes. Prefer a tailor-made or in-company course? Feel free to request a quote.",
-    "reviewsTitle": "What students say",
-    "reviewsSubtitle": "A selection of reviews from former students.",
-    "practiceTitle": "In practice",
-    "practiceSubtitle": "Students speaking, lesson situations and a day out with the group through the city.",
-    "galleryTitle": "Impressions",
-    "wordTitle": "Did you know …",
-    "wordSubtitle": "Word of the week"
-  },
-  "contact": {
-    "title": "Rates / requesting a quote",
-    "intro": "Would you like to request a quote with no further obligations? Simply get in touch with us.",
-    "email": "info@detaalbaas.nl",
-    "phone": "(+31) 6 16 459 022",
-    "phoneHref": "+31616459022",
-    "addressLine1": "Tweede Jan van der Heijdenstraat 44-3L",
-    "addressLine2": "1074 XV Amsterdam",
-    "ctaEmail": "Send an email",
-    "ctaCall": "Call now"
-  },
-  "footer": {
-    "tagline": "Tailor-made Dutch language training in Amsterdam and the surrounding area.",
-    "rights": "All rights reserved."
   }
 }
