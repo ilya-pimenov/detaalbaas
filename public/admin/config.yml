@@ -13,8 +13,8 @@ backend:
   name: github
   repo: ilya-pimenov/detaalbaas
   branch: main
-  base_url: https://decap-oauth.example.workers.dev  # <-- CHANGE ME (OAuth proxy)
-
+  base_url: https://detaalbaas-cms.ilyapimenov.workers.dev
+  auth_endpoint: /auth
 # Lets you edit against local files with `npx decap-server` (no GitHub login).
 local_backend: true
 
