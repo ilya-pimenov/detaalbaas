@@ -1,15 +1,15 @@
 {
-  "order": 2,
-  "active": true,
-  "title_nl": "NT2 Halfgevorderden 1",
-  "title_en": "NT2 Intermediate 1",
-  "level": "A2–B1",
   "day_nl": "Donderdag",
+  "level": "A2–B1",
+  "title_nl": "NT2 Halfgevorderden 1",
+  "active": true,
+  "price": "€ 350",
+  "enrollUrl": "mailto:info@detaalbaas.nl?subject=Inschrijving%20NT2%20Halfgevorderden%201",
   "day_en": "Thursday",
-  "startDate": "2026-04-30",
   "time": "19:00 – 21:00",
   "hours_nl": "20 uur (10 × 2 uur)",
-  "hours_en": "20 hours (10 × 2 hours)",
-  "price": "€ 350",
-  "enrollUrl": "mailto:info@detaalbaas.nl?subject=Inschrijving%20NT2%20Halfgevorderden%201"
+  "order": 2,
+  "startDate": "2026-09-03",
+  "title_en": "NT2 Intermediate 1",
+  "hours_en": "20 hours (10 × 2 hours)"
 }
