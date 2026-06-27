@@ -1,7 +1,15 @@
 {
-  "lang": "nl",
-  "siteTitle": "De TaalBaas",
-  "siteDescription": "Op maat gemaakte taaltrainingen Nederlands in Amsterdam en omgeving voor bedrijven, instellingen en particulieren.",
+  "contact": {
+    "addressLine1": "Tweede Jan van der Heijdenstraat 44-3L",
+    "addressLine2": "1074 XV Amsterdam",
+    "intro": "Wilt u vrijblijvend een offerte aanvragen? Neem dan gerust contact met ons op.",
+    "ctaEmail": "Stuur een e-mail",
+    "ctaCall": "Bel direct",
+    "phone": "(+31) 6 16 459 022",
+    "title": "Tarieven / offerte aanvragen",
+    "phoneHref": "+31616459022",
+    "email": "bleekertim@gmail.com"
+  },
   "nav": {
     "reviews": "Reviews",
     "courses": "Taaltrainingen",
@@ -10,54 +18,67 @@
     "contact": "Contact"
   },
   "languageSwitchLabel": "EN",
+  "lang": "nl",
+  "sections": {
+    "coursesTitle": "Taaltrainingen",
+    "wordSubtitle": "Woord van de week",
+    "galleryTitle": "Sfeerimpressie",
+    "wordTitle": "Wist je dat …",
+    "coursesSubtitle": "Open inschrijvingen voor groepslessen. Liever een training op maat of in-company? Vraag gerust een offerte aan.",
+    "reviewsSubtitle": "Een greep uit de reviews van eerdere cursisten.",
+    "practiceSubtitle": "Studenten aan het woord, lessituaties en een uitje met de groep door de stad.",
+    "practiceTitle": "In de praktijk",
+    "reviewsTitle": "Wat studenten zeggen"
+  },
+  "siteTitle": "De TaalBaas",
+  "siteDescription": "Op maat gemaakte taaltrainingen Nederlands in Amsterdam en omgeving voor bedrijven, instellingen en particulieren.",
   "hero": {
+    "body": "De trainingen worden in overleg met u gemaakt en volledig afgestemd op uw specifieke wensen en behoeftes.",
     "badge": "Nederlandse taaltraining in Amsterdam",
-    "titleLead": "De",
+    "ctaSecondary": "Vraag een offerte aan",
     "titleBoss": "TaalBaas",
     "intro": "verzorgt op maat gemaakte taaltrainingen Nederlands in Amsterdam en omgeving voor bedrijven, instellingen en particulieren.",
-    "body": "De trainingen worden in overleg met u gemaakt en volledig afgestemd op uw specifieke wensen en behoeftes.",
+    "imageAlt": "Tim geeft een interactieve Nederlandse les aan een groep studenten",
     "ctaPrimary": "Bekijk trainingen",
-    "ctaSecondary": "Vraag een offerte aan",
-    "image": "/media/photos/classroom-bright.jpg",
-    "imageAlt": "Tim geeft een interactieve Nederlandse les aan een groep studenten"
+    "titleLead": "De",
+    "image": "/media/photos/classroom-bright.jpg"
+  },
+  "footer": {
+    "tagline": "Op maat gemaakte taaltrainingen Nederlands in Amsterdam en omgeving.",
+    "rights": "Alle rechten voorbehouden."
   },
   "qualities": {
     "title": "Zo werkt De TaalBaas",
     "subtitle": "Elke training is anders, maar de aanpak is altijd:",
     "items": [
-      { "label": "Interactief", "description": "Je bent voortdurend zelf aan het woord, niet passief aan het luisteren." },
-      { "label": "Communicatief", "description": "De nadruk ligt op échte gesprekken die je meteen buiten de les gebruikt." },
-      { "label": "Taakgericht", "description": "Je oefent met concrete taken uit je werk en dagelijks leven." },
-      { "label": "Praktisch", "description": "Direct toepasbaar Nederlands, geen droge theorie om de theorie." },
-      { "label": "Gestructureerd", "description": "Een heldere opbouw van beginner tot gevorderd, stap voor stap." },
-      { "label": "Doelgericht", "description": "We werken samen toe naar jouw specifieke doel of examen." },
-      { "label": "Dynamisch", "description": "Afwisselende werkvormen zorgen dat je nooit uitgekeken raakt." }
+      {
+        "label": "Interactief",
+        "description": "Je bent voortdurend zelf aan het woord, niet passief aan het luisteren."
+      },
+      {
+        "label": "Communicatief",
+        "description": "De nadruk ligt op échte gesprekken die je meteen buiten de les gebruikt."
+      },
+      {
+        "label": "Taakgericht",
+        "description": "Je oefent met concrete taken uit je werk en dagelijks leven."
+      },
+      {
+        "label": "Praktisch",
+        "description": "Direct toepasbaar Nederlands, geen droge theorie om de theorie."
+      },
+      {
+        "label": "Gestructureerd",
+        "description": "Een heldere opbouw van beginner tot gevorderd, stap voor stap."
+      },
+      {
+        "label": "Doelgericht",
+        "description": "We werken samen toe naar jouw specifieke doel of examen."
+      },
+      {
+        "label": "Dynamisch",
+        "description": "Afwisselende werkvormen zorgen dat je nooit uitgekeken raakt."
+      }
     ]
-  },
-  "sections": {
-    "coursesTitle": "Taaltrainingen",
-    "coursesSubtitle": "Open inschrijvingen voor groepslessen. Liever een training op maat of in-company? Vraag gerust een offerte aan.",
-    "reviewsTitle": "Wat studenten zeggen",
-    "reviewsSubtitle": "Een greep uit de reviews van eerdere cursisten.",
-    "practiceTitle": "In de praktijk",
-    "practiceSubtitle": "Studenten aan het woord, lessituaties en een uitje met de groep door de stad.",
-    "galleryTitle": "Sfeerimpressie",
-    "wordTitle": "Wist je dat …",
-    "wordSubtitle": "Woord van de week"
-  },
-  "contact": {
-    "title": "Tarieven / offerte aanvragen",
-    "intro": "Wilt u vrijblijvend een offerte aanvragen? Neem dan gerust contact met ons op.",
-    "email": "info@detaalbaas.nl",
-    "phone": "(+31) 6 16 459 022",
-    "phoneHref": "+31616459022",
-    "addressLine1": "Tweede Jan van der Heijdenstraat 44-3L",
-    "addressLine2": "1074 XV Amsterdam",
-    "ctaEmail": "Stuur een e-mail",
-    "ctaCall": "Bel direct"
-  },
-  "footer": {
-    "tagline": "Op maat gemaakte taaltrainingen Nederlands in Amsterdam en omgeving.",
-    "rights": "Alle rechten voorbehouden."
   }
 }
