@@ -1,6 +1,6 @@
 ---
 import '../styles/globals.css';
-import type { Lang } from '../lib/content';
+import { asset, type Lang } from '../lib/content';
 
 interface Props {
   lang: Lang;
@@ -11,7 +11,7 @@ interface Props {
 }
 
 const { lang, title, description, altUrl } = Astro.props;
-const ogImage = new URL('/media/photos/classroom-bright.jpg', Astro.site).href;
+const ogImage = new URL(asset('/media/photos/classroom-bright.jpg'), Astro.site).href;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const altLang = lang === 'nl' ? 'en' : 'nl';
 const altHref = new URL(altUrl, Astro.site).href;
@@ -22,7 +22,7 @@ const altHref = new URL(altUrl, Astro.site).href;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={asset('/favicon.svg')} />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />

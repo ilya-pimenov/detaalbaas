@@ -119,3 +119,12 @@ export function localizedHome(lang: Lang): string {
   const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   return lang === 'en' ? `${base}/en/` : `${base}/`;
 }
+
+// Prefixes a root-absolute asset path (e.g. "/media/x.jpg") with astro's
+// configured base path. No-op when the site is served from the domain root,
+// so it is safe whether deployed to github.io/<repo>/ or a custom domain.
+export function asset(path: string): string {
+  if (!path.startsWith('/')) return path;
+  const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+  return base + path;
+}
