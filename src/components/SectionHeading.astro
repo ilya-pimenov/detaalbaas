@@ -1,0 +1,18 @@
+---
+import Badge from './ui/Badge.astro';
+interface Props {
+  eyebrow?: string;
+  title: string;
+  subtitle?: string;
+  center?: boolean;
+}
+const { eyebrow, title, subtitle, center = true } = Astro.props;
+---
+
+<div class={`max-w-2xl ${center ? 'mx-auto text-center' : ''}`}>
+  {eyebrow && <Badge variant="secondary" class="mb-4">{eyebrow}</Badge>}
+  <h2 class="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+    {title}
+  </h2>
+  {subtitle && <p class="mt-4 text-lg text-muted-foreground">{subtitle}</p>}
+</div>

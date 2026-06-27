@@ -1,0 +1,15 @@
+{
+  "lessonImages": [
+    { "src": "/media/photos/group-table.jpg", "alt_nl": "Studenten werken samen aan een opdracht", "alt_en": "Students working together on an assignment" },
+    { "src": "/media/photos/standing-activity.jpg", "alt_nl": "Interactieve werkvorm tijdens de les", "alt_en": "Interactive exercise during the lesson" },
+    { "src": "/media/photos/movement-game.jpg", "alt_nl": "Een dynamische oefening in beweging", "alt_en": "A dynamic exercise on the move" },
+    { "src": "/media/photos/teaching-screen.jpg", "alt_nl": "Uitleg met behulp van het scherm", "alt_en": "Explanation using the screen" },
+    { "src": "/media/photos/table-discussion.jpg", "alt_nl": "Gesprek aan tafel in een lichte leslocatie", "alt_en": "Conversation at the table in a bright classroom" },
+    { "src": "/media/photos/piano-presentation.jpg", "alt_nl": "Studenten presenteren in de leszaal", "alt_en": "Students presenting in the classroom" }
+  ],
+  "excursionImages": [
+    { "src": "/media/photos/excursion-ferry.jpg", "alt_nl": "Uitje met de groep: met de fiets op het pontje", "alt_en": "Day out with the group: cycling onto the ferry" },
+    { "src": "/media/photos/excursion-terrace.jpg", "alt_nl": "Samen op een terras buiten Amsterdam", "alt_en": "Together on a terrace outside Amsterdam" },
+    { "src": "/media/photos/excursion-windmill.jpg", "alt_nl": "Een Hollandse molen tijdens het uitje", "alt_en": "A Dutch windmill during the outing" }
+  ]
+}

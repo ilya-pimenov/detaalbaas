@@ -1,0 +1,49 @@
+---
+import Card from '../ui/Card.astro';
+import Badge from '../ui/Badge.astro';
+import { getSettings, getWord, pick, type Lang } from '../../lib/content';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const s = getSettings(lang);
+const w = getWord();
+if (!w) return null;
+
+const meaningLabel = pick(lang, 'Betekenis', 'Meaning');
+const originLabel = pick(lang, 'Herkomst', 'Origin');
+const exampleLabel = pick(lang, 'In de praktijk', 'In practice');
+---
+
+<section id="word" class="bg-secondary/40 py-16 md:py-24">
+  <div class="container">
+    <Card class="mx-auto max-w-3xl overflow-hidden">
+      <div class="bg-primary/10 px-6 py-5 sm:px-10">
+        <Badge>{s.sections.wordSubtitle}</Badge>
+        <p class="mt-3 text-sm font-medium text-muted-foreground">{s.sections.wordTitle}</p>
+      </div>
+
+      <div class="space-y-6 px-6 py-8 sm:px-10">
+        <div class="flex items-baseline gap-3">
+          <h2 class="text-4xl font-extrabold tracking-tight text-primary sm:text-5xl">{w.word}</h2>
+        </div>
+
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-wide text-muted-foreground">{meaningLabel}</p>
+          <p class="mt-1.5 text-foreground">{pick(lang, w.meaning_nl, w.meaning_en)}</p>
+        </div>
+
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-wide text-muted-foreground">{originLabel}</p>
+          <p class="mt-1.5 leading-relaxed text-muted-foreground">{pick(lang, w.etymology_nl, w.etymology_en)}</p>
+        </div>
+
+        <figure class="border-l-2 border-primary pl-4">
+          <p class="text-xs font-semibold uppercase tracking-wide text-muted-foreground">{exampleLabel}</p>
+          <blockquote class="mt-1.5 italic text-foreground">&ldquo;{pick(lang, w.exampleNl, w.exampleEn)}&rdquo;</blockquote>
+        </figure>
+      </div>
+    </Card>
+  </div>
+</section>

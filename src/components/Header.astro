@@ -1,0 +1,99 @@
+---
+import Wordmark from './Wordmark.astro';
+import Button from './ui/Button.astro';
+import { getSettings, localizedHome, type Lang } from '../lib/content';
+
+interface Props {
+  lang: Lang;
+  altUrl: string;
+}
+const { lang, altUrl } = Astro.props;
+const s = getSettings(lang);
+const home = localizedHome(lang);
+
+const links = [
+  { href: `${home}#courses`, label: s.nav.courses },
+  { href: `${home}#reviews`, label: s.nav.reviews },
+  { href: `${home}#practice`, label: s.nav.practice },
+  { href: `${home}#word`, label: s.nav.word },
+  { href: `${home}#contact`, label: s.nav.contact },
+];
+---
+
+<header
+  class="sticky top-0 z-50 w-full border-b border-border/60 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+>
+  <div class="container flex h-16 items-center justify-between gap-4">
+    <Wordmark href={home} class="text-xl" />
+
+    <nav class="hidden items-center gap-1 md:flex">
+      {
+        links.map((l) => (
+          <a
+            href={l.href}
+            class="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+          >
+            {l.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <a
+        href={altUrl}
+        class="inline-flex h-9 items-center rounded-md border border-input px-3 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+        aria-label={lang === 'nl' ? 'Switch to English' : 'Schakel naar Nederlands'}
+      >
+        {s.languageSwitchLabel}
+      </a>
+      <Button href={`${home}#contact`} size="sm" class="hidden sm:inline-flex">
+        {s.hero.ctaSecondary}
+      </Button>
+
+      <button
+        type="button"
+        id="menu-toggle"
+        class="inline-flex h-9 w-9 items-center justify-center rounded-md border border-input md:hidden"
+        aria-label="Menu"
+        aria-expanded="false"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden border-t border-border/60 bg-background md:hidden">
+    <nav class="container flex flex-col py-3">
+      {
+        links.map((l) => (
+          <a
+            href={l.href}
+            class="rounded-md px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+            data-menu-link
+          >
+            {l.label}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  if (toggle && menu) {
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('hidden') === false;
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+    menu.querySelectorAll('[data-menu-link]').forEach((link) =>
+      link.addEventListener('click', () => {
+        menu.classList.add('hidden');
+        toggle.setAttribute('aria-expanded', 'false');
+      })
+    );
+  }
+</script>

@@ -1,0 +1,92 @@
+---
+import SectionHeading from '../SectionHeading.astro';
+import Card from '../ui/Card.astro';
+import Badge from '../ui/Badge.astro';
+import {
+  getSettings,
+  getVideos,
+  getGallery,
+  pick,
+  type Lang,
+} from '../../lib/content';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const s = getSettings(lang);
+const videos = getVideos();
+const gallery = getGallery();
+const galleryLabel = pick(lang, 'Sfeerimpressie', 'Impressions');
+const excursionLabel = pick(lang, 'Uitje met de groep', 'Day out with the group');
+---
+
+<section id="practice" class="py-16 md:py-24">
+  <div class="container">
+    <SectionHeading
+      eyebrow={s.nav.practice}
+      title={s.sections.practiceTitle}
+      subtitle={s.sections.practiceSubtitle}
+    />
+
+    <!-- Student videos -->
+    <div class="mx-auto mt-12 grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        videos.map((v) => (
+          <Card class="overflow-hidden">
+            <video
+              class="aspect-[9/16] w-full bg-black object-cover"
+              controls
+              preload="none"
+              playsinline
+              poster={v.poster}
+            >
+              <source src={v.video} type="video/mp4" />
+            </video>
+            <div class="p-4">
+              <p class="font-semibold text-foreground">{pick(lang, v.title_nl, v.title_en)}</p>
+              <p class="mt-1 text-sm text-muted-foreground">{pick(lang, v.caption_nl, v.caption_en)}</p>
+            </div>
+          </Card>
+        ))
+      }
+    </div>
+
+    <!-- Lesson gallery -->
+    <div class="mt-16">
+      <h3 class="mb-5 text-xl font-semibold text-foreground">{galleryLabel}</h3>
+      <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+        {
+          gallery.lessonImages.map((img) => (
+            <img
+              src={img.src}
+              alt={pick(lang, img.alt_nl, img.alt_en)}
+              loading="lazy"
+              class="aspect-square w-full rounded-lg border border-border object-cover transition-transform duration-300 hover:scale-[1.03]"
+            />
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Excursion -->
+    <div class="mt-12">
+      <div class="mb-5 flex items-center gap-3">
+        <h3 class="text-xl font-semibold text-foreground">{excursionLabel}</h3>
+        <Badge variant="secondary">Amsterdam &amp; omgeving</Badge>
+      </div>
+      <div class="grid gap-3 sm:grid-cols-3">
+        {
+          gallery.excursionImages.map((img) => (
+            <img
+              src={img.src}
+              alt={pick(lang, img.alt_nl, img.alt_en)}
+              loading="lazy"
+              class="aspect-[4/3] w-full rounded-xl border border-border object-cover"
+            />
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,10 @@
+{
+  "order": 2,
+  "student": "Libby",
+  "title_nl": "Libby aan het woord",
+  "title_en": "Libby speaking",
+  "caption_nl": "Een student vertelt in het Nederlands over de lessen.",
+  "caption_en": "A student talks about the lessons in Dutch.",
+  "video": "/media/videos/libby.mp4",
+  "poster": "/media/videos/libby-poster.jpg"
+}

@@ -1,0 +1,51 @@
+---
+import Wordmark from './Wordmark.astro';
+import { getSettings, localizedHome, type Lang } from '../lib/content';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const s = getSettings(lang);
+const home = localizedHome(lang);
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-border/60 bg-secondary/40">
+  <div class="container grid gap-8 py-12 md:grid-cols-3">
+    <div class="space-y-3">
+      <Wordmark href={home} class="text-lg" />
+      <p class="max-w-xs text-sm text-muted-foreground">{s.footer.tagline}</p>
+    </div>
+
+    <div class="space-y-2 text-sm">
+      <p class="font-semibold text-foreground">{s.nav.contact}</p>
+      <p class="text-muted-foreground">{s.contact.addressLine1}</p>
+      <p class="text-muted-foreground">{s.contact.addressLine2}</p>
+      <p>
+        <a class="text-muted-foreground hover:text-primary" href={`tel:${s.contact.phoneHref}`}>
+          {s.contact.phone}
+        </a>
+      </p>
+      <p>
+        <a class="text-muted-foreground hover:text-primary" href={`mailto:${s.contact.email}`}>
+          {s.contact.email}
+        </a>
+      </p>
+    </div>
+
+    <div class="space-y-2 text-sm md:text-right">
+      <a href={`${home}#courses`} class="block text-muted-foreground hover:text-primary">{s.nav.courses}</a>
+      <a href={`${home}#reviews`} class="block text-muted-foreground hover:text-primary">{s.nav.reviews}</a>
+      <a href={`${home}#practice`} class="block text-muted-foreground hover:text-primary">{s.nav.practice}</a>
+      <a href={`${home}#word`} class="block text-muted-foreground hover:text-primary">{s.nav.word}</a>
+    </div>
+  </div>
+
+  <div class="border-t border-border/60">
+    <div class="container flex flex-col items-center justify-between gap-2 py-5 text-xs text-muted-foreground sm:flex-row">
+      <p>© {year} De TaalBaas. {s.footer.rights}</p>
+      <p>Amsterdam · Nederland</p>
+    </div>
+  </div>
+</footer>

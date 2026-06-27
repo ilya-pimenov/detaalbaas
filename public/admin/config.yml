@@ -1,0 +1,300 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Decap CMS configuration for De TaalBaas
+#
+# BEFORE GOING LIVE: set `backend.repo` to "your-github-user/your-repo-name"
+# and `backend.base_url` to the URL of your OAuth proxy (see README → "Online
+# editing with Decap CMS"). Until then you can edit locally with:
+#     npm run cms        # starts the local proxy on :8081
+#     npm run dev        # in a second terminal
+#     open http://localhost:4321/admin/
+# ─────────────────────────────────────────────────────────────────────────────
+
+backend:
+  name: github
+  repo: ilya-pimenov/detaalbaas
+  branch: main
+  base_url: https://decap-oauth.example.workers.dev  # <-- CHANGE ME (OAuth proxy)
+
+# Lets you edit against local files with `npx decap-server` (no GitHub login).
+local_backend: true
+
+# New uploads land here; existing photos/videos already live in /media/...
+media_folder: "public/media/uploads"
+public_folder: "/media/uploads"
+
+publish_mode: simple
+
+collections:
+  # ── Site texts (two singleton files: Dutch + English) ──────────────────────
+  - name: settings
+    label: "Teksten / Site texts"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: nl
+        label: "Nederlands (NL)"
+        file: "src/data/settings/nl.json"
+        format: json
+        fields:
+          - { name: lang, label: "Taalcode (niet wijzigen)", widget: hidden, default: "nl" }
+          - { name: siteTitle, label: "Sitenaam", widget: string }
+          - { name: siteDescription, label: "Omschrijving (SEO)", widget: text }
+          - name: nav
+            label: "Menu"
+            widget: object
+            fields:
+              - { name: reviews, label: Reviews, widget: string }
+              - { name: courses, label: Taaltrainingen, widget: string }
+              - { name: practice, label: "In de praktijk", widget: string }
+              - { name: word, label: "Wist je dat", widget: string }
+              - { name: contact, label: Contact, widget: string }
+          - { name: languageSwitchLabel, label: "Taalknop-label", widget: string }
+          - name: hero
+            label: "Hero (bovenaan)"
+            widget: object
+            fields:
+              - { name: badge, label: Badge, widget: string }
+              - { name: titleLead, label: "Titel deel 1", widget: string }
+              - { name: titleBoss, label: "Titel deel 2", widget: string }
+              - { name: intro, label: Introtekst, widget: text }
+              - { name: body, label: Bodytekst, widget: text }
+              - { name: ctaPrimary, label: "Knop 1", widget: string }
+              - { name: ctaSecondary, label: "Knop 2", widget: string }
+              - { name: image, label: Afbeelding, widget: image }
+              - { name: imageAlt, label: "Alt-tekst afbeelding", widget: string }
+          - name: qualities
+            label: "Aanpak / kwaliteiten"
+            widget: object
+            fields:
+              - { name: title, label: Titel, widget: string }
+              - { name: subtitle, label: Subtitel, widget: string }
+              - name: items
+                label: Kenmerken
+                widget: list
+                fields:
+                  - { name: label, label: Label, widget: string }
+                  - { name: description, label: Omschrijving, widget: text }
+          - name: sections
+            label: "Sectietitels"
+            widget: object
+            fields:
+              - { name: coursesTitle, label: "Taaltrainingen — titel", widget: string }
+              - { name: coursesSubtitle, label: "Taaltrainingen — subtitel", widget: text }
+              - { name: reviewsTitle, label: "Reviews — titel", widget: string }
+              - { name: reviewsSubtitle, label: "Reviews — subtitel", widget: text }
+              - { name: practiceTitle, label: "In de praktijk — titel", widget: string }
+              - { name: practiceSubtitle, label: "In de praktijk — subtitel", widget: text }
+              - { name: galleryTitle, label: "Galerij — titel", widget: string }
+              - { name: wordTitle, label: "Wist je dat — titel", widget: string }
+              - { name: wordSubtitle, label: "Woord van de week — label", widget: string }
+          - name: contact
+            label: Contact
+            widget: object
+            fields:
+              - { name: title, label: Titel, widget: string }
+              - { name: intro, label: Introtekst, widget: text }
+              - { name: email, label: E-mail, widget: string }
+              - { name: phone, label: "Telefoon (weergave)", widget: string }
+              - { name: phoneHref, label: "Telefoon (link, +316...)", widget: string }
+              - { name: addressLine1, label: "Adres regel 1", widget: string }
+              - { name: addressLine2, label: "Adres regel 2", widget: string }
+              - { name: ctaEmail, label: "E-mailknop", widget: string }
+              - { name: ctaCall, label: "Belknop", widget: string }
+          - name: footer
+            label: Footer
+            widget: object
+            fields:
+              - { name: tagline, label: Tagline, widget: text }
+              - { name: rights, label: "Rechten-tekst", widget: string }
+
+      - name: en
+        label: "English (EN)"
+        file: "src/data/settings/en.json"
+        format: json
+        fields:
+          - { name: lang, label: "Language code (do not change)", widget: hidden, default: "en" }
+          - { name: siteTitle, label: "Site name", widget: string }
+          - { name: siteDescription, label: "Description (SEO)", widget: text }
+          - name: nav
+            label: "Menu"
+            widget: object
+            fields:
+              - { name: reviews, label: Reviews, widget: string }
+              - { name: courses, label: Courses, widget: string }
+              - { name: practice, label: "In practice", widget: string }
+              - { name: word, label: "Did you know", widget: string }
+              - { name: contact, label: Contact, widget: string }
+          - { name: languageSwitchLabel, label: "Language button label", widget: string }
+          - name: hero
+            label: "Hero"
+            widget: object
+            fields:
+              - { name: badge, label: Badge, widget: string }
+              - { name: titleLead, label: "Title part 1", widget: string }
+              - { name: titleBoss, label: "Title part 2", widget: string }
+              - { name: intro, label: Intro text, widget: text }
+              - { name: body, label: Body text, widget: text }
+              - { name: ctaPrimary, label: "Button 1", widget: string }
+              - { name: ctaSecondary, label: "Button 2", widget: string }
+              - { name: image, label: Image, widget: image }
+              - { name: imageAlt, label: "Image alt text", widget: string }
+          - name: qualities
+            label: "Approach / qualities"
+            widget: object
+            fields:
+              - { name: title, label: Title, widget: string }
+              - { name: subtitle, label: Subtitle, widget: string }
+              - name: items
+                label: Qualities
+                widget: list
+                fields:
+                  - { name: label, label: Label, widget: string }
+                  - { name: description, label: Description, widget: text }
+          - name: sections
+            label: "Section titles"
+            widget: object
+            fields:
+              - { name: coursesTitle, label: "Courses — title", widget: string }
+              - { name: coursesSubtitle, label: "Courses — subtitle", widget: text }
+              - { name: reviewsTitle, label: "Reviews — title", widget: string }
+              - { name: reviewsSubtitle, label: "Reviews — subtitle", widget: text }
+              - { name: practiceTitle, label: "In practice — title", widget: string }
+              - { name: practiceSubtitle, label: "In practice — subtitle", widget: text }
+              - { name: galleryTitle, label: "Gallery — title", widget: string }
+              - { name: wordTitle, label: "Did you know — title", widget: string }
+              - { name: wordSubtitle, label: "Word of the week — label", widget: string }
+          - name: contact
+            label: Contact
+            widget: object
+            fields:
+              - { name: title, label: Title, widget: string }
+              - { name: intro, label: Intro text, widget: text }
+              - { name: email, label: Email, widget: string }
+              - { name: phone, label: "Phone (display)", widget: string }
+              - { name: phoneHref, label: "Phone (link, +316...)", widget: string }
+              - { name: addressLine1, label: "Address line 1", widget: string }
+              - { name: addressLine2, label: "Address line 2", widget: string }
+              - { name: ctaEmail, label: "Email button", widget: string }
+              - { name: ctaCall, label: "Call button", widget: string }
+          - name: footer
+            label: Footer
+            widget: object
+            fields:
+              - { name: tagline, label: Tagline, widget: text }
+              - { name: rights, label: "Rights text", widget: string }
+
+  # ── Courses ─────────────────────────────────────────────────────────────────
+  - name: courses
+    label: "Taaltrainingen / Courses"
+    label_singular: "Training"
+    folder: "src/data/courses"
+    extension: json
+    format: json
+    create: true
+    identifier_field: title_nl
+    summary: "{{title_nl}} ({{level}})"
+    sortable_fields: [order, startDate]
+    fields:
+      - { name: order, label: Volgorde, widget: number, value_type: int, default: 1 }
+      - { name: active, label: "Tonen op site?", widget: boolean, default: true }
+      - { name: title_nl, label: "Titel (NL)", widget: string }
+      - { name: title_en, label: "Title (EN)", widget: string }
+      - { name: level, label: "Niveau (bv. A1–A2)", widget: string }
+      - { name: day_nl, label: "Dag (NL)", widget: string }
+      - { name: day_en, label: "Day (EN)", widget: string }
+      - { name: startDate, label: Startdatum, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, picker_utc: true }
+      - { name: time, label: "Tijd (bv. 19:00 – 21:00)", widget: string }
+      - { name: hours_nl, label: "Uren (NL)", widget: string }
+      - { name: hours_en, label: "Hours (EN)", widget: string }
+      - { name: price, label: "Prijs (bv. € 350)", widget: string }
+      - { name: enrollUrl, label: "Inschrijflink (URL of mailto:)", widget: string }
+
+  # ── Reviews ──────────────────────────────────────────────────────────────────
+  - name: reviews
+    label: "Reviews"
+    label_singular: "Review"
+    folder: "src/data/reviews"
+    extension: json
+    format: json
+    create: true
+    identifier_field: name
+    summary: "{{name}} — {{date}}"
+    sortable_fields: [order, date]
+    fields:
+      - { name: order, label: Volgorde, widget: number, value_type: int, default: 1 }
+      - { name: name, label: Naam, widget: string }
+      - { name: role, label: "Functie / bedrijf", widget: string }
+      - { name: date, label: Datum, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, picker_utc: true }
+      - { name: language, label: Taal, widget: select, options: ["nl", "en"], default: "nl" }
+      - { name: quote, label: Citaat, widget: text }
+
+  # ── Student videos ───────────────────────────────────────────────────────────
+  - name: videos
+    label: "Video's / Student videos"
+    label_singular: "Video"
+    folder: "src/data/videos"
+    extension: json
+    format: json
+    create: true
+    identifier_field: student
+    summary: "{{student}}"
+    sortable_fields: [order]
+    fields:
+      - { name: order, label: Volgorde, widget: number, value_type: int, default: 1 }
+      - { name: student, label: "Naam student", widget: string }
+      - { name: title_nl, label: "Titel (NL)", widget: string }
+      - { name: title_en, label: "Title (EN)", widget: string }
+      - { name: caption_nl, label: "Bijschrift (NL)", widget: text }
+      - { name: caption_en, label: "Caption (EN)", widget: text }
+      - { name: video, label: "Videobestand (.mp4)", widget: file }
+      - { name: poster, label: "Posterafbeelding", widget: image }
+
+  # ── Word of the week ─────────────────────────────────────────────────────────
+  - name: words
+    label: "Wist je dat / Word of the week"
+    label_singular: "Woord"
+    folder: "src/data/words"
+    extension: json
+    format: json
+    create: true
+    identifier_field: word
+    summary: "{{word}} — {{date}}"
+    sortable_fields: [date]
+    fields:
+      - { name: active, label: "Tonen op site?", widget: boolean, default: true }
+      - { name: date, label: Datum, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, picker_utc: true }
+      - { name: word, label: Woord, widget: string }
+      - { name: meaning_nl, label: "Betekenis (NL)", widget: text }
+      - { name: meaning_en, label: "Meaning (EN)", widget: text }
+      - { name: etymology_nl, label: "Herkomst (NL)", widget: text }
+      - { name: etymology_en, label: "Origin (EN)", widget: text }
+      - { name: exampleNl, label: "Voorbeeldzin (NL)", widget: text }
+      - { name: exampleEn, label: "Example sentence (EN)", widget: text }
+
+  # ── Photo galleries ──────────────────────────────────────────────────────────
+  - name: gallery
+    label: "Galerij / Gallery"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: gallery
+        label: "Foto's"
+        file: "src/data/gallery/gallery.json"
+        format: json
+        fields:
+          - name: lessonImages
+            label: "Sfeerimpressie (lesfoto's)"
+            widget: list
+            fields:
+              - { name: src, label: Afbeelding, widget: image }
+              - { name: alt_nl, label: "Alt-tekst (NL)", widget: string }
+              - { name: alt_en, label: "Alt text (EN)", widget: string }
+          - name: excursionImages
+            label: "Uitje met de groep"
+            widget: list
+            fields:
+              - { name: src, label: Afbeelding, widget: image }
+              - { name: alt_nl, label: "Alt-tekst (NL)", widget: string }
+              - { name: alt_en, label: "Alt text (EN)", widget: string }

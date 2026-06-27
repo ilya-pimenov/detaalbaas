@@ -1,0 +1,6 @@
+---
+import HomePage from '../components/HomePage.astro';
+import { localizedHome } from '../lib/content';
+---
+
+<HomePage lang="nl" altUrl={localizedHome('en')} />

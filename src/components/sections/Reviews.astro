@@ -1,0 +1,60 @@
+---
+import SectionHeading from '../SectionHeading.astro';
+import Card from '../ui/Card.astro';
+import { getSettings, getReviews, formatDate, type Lang } from '../../lib/content';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const s = getSettings(lang);
+const reviews = getReviews();
+
+function initials(name: string): string {
+  return name
+    .split(/[\s-]+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((w) => w[0]?.toUpperCase())
+    .join('');
+}
+---
+
+<section id="reviews" class="bg-secondary/40 py-16 md:py-24">
+  <div class="container">
+    <SectionHeading
+      eyebrow={s.nav.reviews}
+      title={s.sections.reviewsTitle}
+      subtitle={s.sections.reviewsSubtitle}
+    />
+
+    <div class="mt-12 grid gap-6 md:grid-cols-3">
+      {
+        reviews.map((r) => (
+          <Card class="flex flex-col p-6">
+            <div class="flex items-center gap-1 text-primary" aria-label="5 / 5">
+              {Array.from({ length: 5 }).map(() => (
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              ))}
+            </div>
+
+            <blockquote class="mt-4 flex-1 text-sm leading-relaxed text-foreground">
+              &ldquo;{r.quote}&rdquo;
+            </blockquote>
+
+            <figcaption class="mt-6 flex items-center gap-3 border-t border-border pt-5">
+              <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-primary">
+                {initials(r.name)}
+              </span>
+              <span class="min-w-0">
+                <span class="block truncate font-semibold text-foreground">{r.name}</span>
+                <span class="block truncate text-xs text-muted-foreground">{r.role}</span>
+                <span class="block text-xs text-muted-foreground/70">{formatDate(r.date, lang)}</span>
+              </span>
+            </figcaption>
+          </Card>
+        ))
+      }
+    </div>
+  </div>
+</section>

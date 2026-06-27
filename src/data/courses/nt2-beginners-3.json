@@ -1,0 +1,15 @@
+{
+  "order": 1,
+  "active": true,
+  "title_nl": "NT2 Beginners 3",
+  "title_en": "NT2 Beginners 3",
+  "level": "A1–A2",
+  "day_nl": "Dinsdag",
+  "day_en": "Tuesday",
+  "startDate": "2026-04-28",
+  "time": "19:00 – 21:00",
+  "hours_nl": "20 uur (10 × 2 uur)",
+  "hours_en": "20 hours (10 × 2 hours)",
+  "price": "€ 350",
+  "enrollUrl": "mailto:info@detaalbaas.nl?subject=Inschrijving%20NT2%20Beginners%203"
+}

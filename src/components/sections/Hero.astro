@@ -1,0 +1,52 @@
+---
+import Button from '../ui/Button.astro';
+import Badge from '../ui/Badge.astro';
+import { getSettings, localizedHome, type Lang } from '../../lib/content';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const s = getSettings(lang);
+const home = localizedHome(lang);
+const h = s.hero;
+---
+
+<section class="relative overflow-hidden">
+  <!-- decorative gradient -->
+  <div
+    class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(60%_60%_at_85%_0%,hsl(var(--primary)/0.10),transparent_60%)]"
+  >
+  </div>
+
+  <div class="container grid items-center gap-12 py-16 md:grid-cols-2 md:py-24">
+    <div class="space-y-6">
+      <Badge variant="secondary">{h.badge}</Badge>
+      <h1 class="text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
+        <span class="text-foreground">{h.titleLead}</span>
+        <span class="text-primary">{h.titleBoss}</span>
+      </h1>
+      <p class="text-lg text-muted-foreground sm:text-xl">
+        <span class="font-semibold text-foreground">{h.titleLead} {h.titleBoss}</span>
+        {' '}{h.intro}
+      </p>
+      <p class="max-w-xl text-base text-muted-foreground">{h.body}</p>
+      <div class="flex flex-col gap-3 pt-2 sm:flex-row">
+        <Button href={`${home}#courses`} size="lg">{h.ctaPrimary}</Button>
+        <Button href={`${home}#contact`} size="lg" variant="outline">{h.ctaSecondary}</Button>
+      </div>
+    </div>
+
+    <div class="relative">
+      <div class="absolute -inset-4 -z-10 rounded-3xl bg-primary/10 blur-2xl"></div>
+      <img
+        src={h.image}
+        alt={h.imageAlt}
+        width="800"
+        height="533"
+        loading="eager"
+        class="aspect-[4/3] w-full rounded-2xl border border-border object-cover shadow-xl"
+      />
+    </div>
+  </div>
+</section>
