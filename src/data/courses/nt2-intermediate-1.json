@@ -1,15 +1,15 @@
 {
-  "day_nl": "Dinsdag",
+  "day_nl": "Donderdag",
   "level": "0–A1",
   "title_nl": "NT2 Beginners 1",
   "active": true,
   "price": "€ 360",
   "enrollUrl": "mailto:info@detaalbaas.nl?subject=Inschrijving%20NT2%20Halfgevorderden%201",
-  "day_en": "Tuesday",
+  "day_en": "Thursday",
   "time": "19:00 – 21:00",
   "hours_nl": "10 x 2 uur + daguitje & borrel (25 uur)",
   "order": 2,
-  "startDate": "2026-09-01",
+  "startDate": "2026-09-03",
   "title_en": "NT2 Beginners 1",
   "hours_en": "10 x 2 hours + day trip & social drinks (25 hours)"
 }
